@@ -16,6 +16,9 @@ License `LGPLv3` or later
 
 Checked with `valgrind --leak-check=full`
 
+### TODO
+Rewrite with linked list
+
 *Malformed C*
 
 *2022*
