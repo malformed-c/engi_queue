@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.11)
+include_guard(GLOBAL)
 
 project(engi_queue LANGUAGES C)
 
