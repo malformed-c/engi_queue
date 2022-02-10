@@ -23,5 +23,11 @@ set_property(TARGET ${static_library} PROPERTY OUTPUT_NAME ${PROJECT_NAME})
 add_library(${shared_library} SHARED $<TARGET_OBJECTS:${object_library}>)
 set_property(TARGET ${shared_library} PROPERTY OUTPUT_NAME ${PROJECT_NAME})
 
-add_executable(${PROJECT_NAME}_test main.c)
-target_link_libraries(${PROJECT_NAME}_test ${shared_library})
+add_executable(${shared_library}_test main.c)
+target_link_libraries(${shared_library}_test ${shared_library})
+
+add_executable(${static_library}_test main.c)
+target_link_libraries(${static_library}_test ${static_library})
+
+install(TARGETS ${shared_library} LIBRARY)
+install(TARGETS ${static_library} LIBRARY)
