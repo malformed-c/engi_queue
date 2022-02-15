@@ -18,10 +18,10 @@ build-job:
     - echo "Compile complete."
   artifacts:
     paths:
-      - libengi_queue.so
-      - libengi_queue.a
-      - engi_queue_static_test
-      - engi_queue_shared_test
+      - build/libengi_queue.so
+      - build/libengi_queue.a
+      - build/engi_queue_static_test
+      - build/engi_queue_shared_test
 
 test-job:
   stage: test
