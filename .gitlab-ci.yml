@@ -2,7 +2,7 @@ default:
   image: archlinux
 
 before_script:
- - pacman -Syyuu --noconfirm cmake make gcc
+ - pacman -Syyuu --noconfirm cmake make gcc git
  - git submodules update --remote --recursive
  
 stages:          # List of stages for jobs, and their order of execution
