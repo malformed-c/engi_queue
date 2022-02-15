@@ -3,13 +3,11 @@ default:
 
 before_script:
     - pacman -Syyuu --noconfirm cmake make gcc git
-    - git submodule update --init engi_common
-    - git submodule update --remote --recursive engi_common
+    - git submodule update --init --remote --recursive
 
 stages:
   - build
-  - test
-
+  
 build-job:
   stage: build
   script:
