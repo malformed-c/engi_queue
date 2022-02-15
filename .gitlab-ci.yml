@@ -26,5 +26,5 @@ build-job:
 test-job:
   stage: test
   script:
-    - ./engi_queue_static_test
-    - ./engi_queue_shared_test
+    - ./build/engi_queue_static_test
+    - ./build/engi_queue_shared_test
