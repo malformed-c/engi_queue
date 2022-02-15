@@ -15,9 +15,3 @@ build-job:
     - cmake -DCMAKE_BUILD_TYPE=Debug -DUSE_ASAN=ON -B build/
     - cmake --build build/
     - echo "Compile complete."
-
-test-job:
-  stage: test
-  script:
-    - ./engi_queue_static_test
-    - ./engi_queue_shared_test
