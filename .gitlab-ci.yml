@@ -7,6 +7,7 @@ before_script:
 
 stages:
   - build
+  - test
   
 build-job:
   stage: build
@@ -15,3 +16,15 @@ build-job:
     - cmake -DCMAKE_BUILD_TYPE=Debug -DUSE_ASAN=ON -B build/
     - cmake --build build/
     - echo "Compile complete."
+  artifacts:
+    paths:
+      - libengi_queue.so
+      - libengi_queue.a
+      - engi_queue_static_test
+      - engi_queue_shared_test
+
+test-job:
+  stage: test
+  script:
+    - ./engi_queue_static_test
+    - ./engi_queue_shared_test
