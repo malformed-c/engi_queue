@@ -1,17 +1,14 @@
 default:
   image: archlinux
 
-stages:
-  - prepare
-  - build
-  - test
-
-prepare-job:
-  stage: prepare
-  script:
+before_script:
     - pacman -Syyuu --noconfirm cmake make gcc git
     - git submodule update --init engi_common
     - git submodule update --remote --recursive engi_common
+
+stages:
+  - build
+  - test
 
 build-job:
   stage: build
