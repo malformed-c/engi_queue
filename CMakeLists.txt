@@ -5,8 +5,8 @@ project(engi_queue LANGUAGES C)
 
 include_directories(engi_common/)
 
-set(CMAKE_C_FLAGS_DEBUG "-std=gnu2x -Og -Wall -Wextra -g3 -gdwarf-3 -fanalyzer -flto")
-set(CMAKE_C_FLAGS_RELEASE "-std=gnu2x -Ofast -flto")
+set(CMAKE_C_FLAGS_DEBUG "-std=gnu2x -Og -Wall -Wextra -g3 -pg -gdwarf-3 -fcf-protection -fanalyzer -fsanitize=undefined -flto")
+set(CMAKE_C_FLAGS_RELEASE "-std=gnu2x -Ofast -fcf-protection -flto")
 
 set(src ${PROJECT_NAME}.c)
 
