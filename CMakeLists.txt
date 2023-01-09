@@ -27,7 +27,7 @@ add_executable(${shared_library}_test main.c)
 target_link_libraries(${shared_library}_test ${shared_library})
 
 add_executable(${static_library}_test main.c)
-target_link_libraries(${static_library}_test ${static_library})
+target_link_libraries(${static_library}_test ${static_library} -static)
 
 install(TARGETS ${shared_library} LIBRARY)
 install(TARGETS ${static_library} LIBRARY)
