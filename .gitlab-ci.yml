@@ -17,6 +17,12 @@ dependency-job:
     - cd ..
     - git clone --depth=1 https://gitlab.com/malformed-c/engi_common.git
     - echo "Done"
+  artifacts:
+    untracked: true
+    when: on_success
+    expire_in: 30 days
+    paths:
+      - "../engi_common"
 
 build-job:
   stage: build
@@ -31,6 +37,11 @@ build-job:
       - build/libengi_queue.a
       - build/engi_queue_static_test
       - build/engi_queue_shared_test
+  cache:
+    paths:
+      - "build/CMakeFiles"
+      - "build/CMakeCache.txt"
+
 
 test-job:
   stage: test
