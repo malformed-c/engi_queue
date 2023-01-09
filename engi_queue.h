@@ -13,7 +13,7 @@ typedef struct engi_queue_s
 {
 	engi_queue_cont_t *back;
 	engi_queue_cont_t *front;
-	unsigned int size;
+	size_t size;
 	void * (*enqueue)(void *self, void *data);
 	void * (*dequeue)(void *self, void *data);
 } engi_queue_t;
