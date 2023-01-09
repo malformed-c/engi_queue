@@ -6,9 +6,18 @@ before_script:
     - git submodule update --init --remote --recursive
 
 stages:
+  - dependency
   - build
   - test
   
+dependency-job:
+  stage: dependency
+  script:
+    - echo "Downloading dependecies"
+    - cd ..
+    - git clone --depth=1 https://gitlab.com/malformed-c/engi_common.git
+    - echo "Done"
+
 build-job:
   stage: build
   script:
