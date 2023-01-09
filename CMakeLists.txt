@@ -5,8 +5,8 @@ project(engi_queue LANGUAGES C)
 
 include_directories(${CMAKE_SOURCE_DIR}/../engi_common/)
 
-set(CMAKE_C_FLAGS_DEBUG "-std=gnu2x -Og -Wall -Wextra -g3 -pg -gdwarf-3 -fcf-protection -fanalyzer -fsanitize=undefined -flto -fprofile-use -fprofile-generate -fuse-linker-plugin -march=native -mtune=native")
-set(CMAKE_C_FLAGS_RELEASE "-std=gnu2x -Ofast -fcf-protection -flto -fprofile-use -fuse-linker-plugin -march=native -mtune=native")
+set(CMAKE_C_FLAGS_DEBUG "-std=gnu2x -Og -Wall -Wextra -g3 -gdwarf-3 -flto")
+set(CMAKE_C_FLAGS_RELEASE "-std=gnu2x -Ofast -flto")
 
 set(src ${PROJECT_NAME}.c)
 
