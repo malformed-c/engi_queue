@@ -29,11 +29,13 @@ int main()
 
 	for(int i = 0; i < 1025; i++)
 	{
-		int *temp = queue.dequeue(&queue, NULL);
+		int *temp = queue.dequeue(&queue);
 
 		if(i == 256) assert(*temp == 0xAA);
 
-		free(temp);
+		if (temp != NULL) {
+			free(temp);
+		}
 	}
 
 	engi_queue_destroy(&queue);
